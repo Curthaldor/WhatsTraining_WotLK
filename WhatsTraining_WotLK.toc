@@ -1,0 +1,26 @@
+## Interface: 30300
+## Title: What's Training? WotLK
+## Version: 3.0.2
+## Author: Sveng, Anhility (3.3.5 backport)
+## Notes: Shows you what spells are available at your class trainer
+## OptionalDeps: ClassTrainerPlus
+
+libs\LibStub.lua
+
+Utils.lua
+Cache.lua
+
+Classes\DeathKnight.lua
+Classes\Druid.lua
+Classes\Hunter.lua
+Classes\Mage.lua
+Classes\Paladin.lua
+Classes\Priest.lua
+Classes\Rogue.lua
+Classes\Shaman.lua
+Classes\Warlock.lua
+Classes\Warrior.lua
+
+Localization.lua
+WhatsTrainingUI.lua
+WhatsTraining_WotLK.lua
