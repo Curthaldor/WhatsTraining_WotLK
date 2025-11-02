@@ -153,10 +153,11 @@ local function rebuildData(playerLevel, isLevelUpEvent)
 					-- Check if spell is ignored (ClassTrainerPlus integration)
 					local isIgnored = ignoreStore and ignoreStore:IsIgnored(spellInfo.id)
 
-				if (isIgnored) then
-					categoryKey = IGNORED_KEY
-				elseif (isAbilityKnown(spellInfo.id)) then
+				-- Prioritize "Already known" over "Ignored" so known spells stay in their category
+				if (isAbilityKnown(spellInfo.id)) then
 					categoryKey = KNOWN_KEY
+				elseif (isIgnored) then
+					categoryKey = IGNORED_KEY
 				elseif (spell.requiredTalentId ~= nil and
 					not isAbilityKnown(spell.requiredTalentId)) then
 					categoryKey = MISSINGTALENT_KEY
